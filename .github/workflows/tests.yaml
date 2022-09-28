@@ -12,7 +12,7 @@ on:
 env:
   IMAGE_REGISTRY: datamodelingtool.azurecr.io
   API_IMAGE: datamodelingtool.azurecr.io/dmt/api
-  WEB_IMAGE: datamodelingtool.azurecr.io/dmt/web
+  WEB_IMAGE: datamodelingtool.azurecr.io/dm-app/analysis-platform
 
 jobs:
   test-api:

@@ -54,7 +54,7 @@ services:
 
   web:
     build: ./web
-    image: datamodelingtool.azurecr.io/dmt/web
+    image: datamodelingtool.azurecr.io/dm-app/analysis-platform
     restart: unless-stopped
     ports:
       - "3000:3000"
