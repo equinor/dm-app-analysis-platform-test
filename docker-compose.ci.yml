@@ -1,18 +1,6 @@
 version: "3.4"
 
 services:
-  api:
-    build:
-      context: ./api
-      target: development
-    image: api-development
-    environment:
-      API_DEBUG: 1
-      API_ENV: testing
-      ENVIRONMENT: local
-    depends_on:
-      - dmss
-
   web:
     build:
       context: ./web
@@ -26,14 +14,3 @@ services:
     environment:
       CI: "true"
       REACT_APP_AUTH: 0
-
-  dmss:
-    image: datamodelingtool.azurecr.io/dmss
-    restart: unless-stopped
-    environment:
-      ENVIRONMENT: local
-      MONGO_INITDB_ROOT_USERNAME: maf
-      MONGO_INITDB_ROOT_PASSWORD: maf
-      SECRET_KEY: sg9aeUM5i1JO4gNN8fQadokJa3_gXQMLBjSGGYcfscs= # Don't reuse this in production...
-    depends_on:
-      - db
