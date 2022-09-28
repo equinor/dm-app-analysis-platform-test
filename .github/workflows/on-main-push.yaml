@@ -2,7 +2,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   tests:
@@ -41,10 +41,3 @@ jobs:
     secrets:
       ACR_SECRET: ${{ secrets.ACR_SECRET }}
 
-  deploy:
-    needs: publish-latest
-    uses: ./.github/workflows/deploy.yaml
-    with:
-      radix-environment: 'dev'
-    secrets:
-      APP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.APP_SERVICE_ACCOUNT_TOKEN }}
